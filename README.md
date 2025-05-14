@@ -4,8 +4,8 @@ A project developed for the [Arquivo.pt Contest 2025](https://sobre.arquivo.pt/p
 
 ## Resources
 
+- **Website implementation**: [KairosNews Web App](https://kairos-news.expo.app/)
 - **Handcrafted Dataset**: [KairosNews Dataset on Hugging Face](https://huggingface.co/datasets/0edon/KairosNews)
-- **Website**: [KairosNews Web App](https://kairos-news.expo.app/)
 - **Project Description**: [View document](https://archive.org/details/final_20250514)
 - **Thesis Publication**: *To be published in October 2025*
 
