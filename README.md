@@ -14,6 +14,6 @@ A project developed for the [Arquivo.pt Contest 2025](https://sobre.arquivo.pt/p
 This repository contains the core components of the project, including:
 - Scripts for dataset acquisition
 - Implementation of various models
-- Query elaboration processes
+- Query description
 
 Explore the code and resources to learn more about the project!
