@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+logging
+transformers
+torch
+sentence_transformers
+nltk
+spacy
+numpy
+pandas
+scipy
+psycopg2
+sentencepiece
