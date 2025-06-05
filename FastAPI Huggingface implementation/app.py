@@ -60,6 +60,10 @@ app = FastAPI(
     lifespan=lifespan
 )
 
+@app.get("/")
+async def root():
+    return {"message": "Kairos News API is running"}
+    
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],

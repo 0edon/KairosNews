@@ -100,7 +100,7 @@ class QueryProcessor:
     def _generate_summary(self, articles: List[Dict[str, Any]]) -> Dict[str, Any]:
         """Generate summary from articles with fallback handling"""
         try:
-            contents = [article["content"] for article in articles[:5]]
+            contents = [article["content"] for article in articles[:3]]
             sentences = []
             
             for content in contents:
@@ -114,15 +114,19 @@ class QueryProcessor:
                 }
             
             print("Starting first summary generation")
+
+            #Creating graph representation of sentences
             embeddings = self.embedding_model.encode(sentences)
             similarity_matrix = np.dot(embeddings, embeddings.T) / (np.linalg.norm(embeddings, axis=1, keepdims=True) * np.linalg.norm(embeddings, axis=1, keepdims=True).T)
             centrality_scores = degree_centrality_scores(similarity_matrix, threshold=0.1)
             
+            # Selecting top 10 sentences based on centrality scores
             top_indices = np.argsort(-centrality_scores)[:10]
             key_sentences = [sentences[idx].strip() for idx in top_indices]
             combined_text = ' '.join(key_sentences)
-            
+
             print(f"First summary done with: {len(key_sentences)} sentences")
+            print(combined_text)
 
             return {
                 "summary": self.summarization_model.summarize(combined_text),
